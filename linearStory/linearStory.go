@@ -1,11 +1,9 @@
 package main
 
+import "fmt"
+
 // add a function that will insert a new page after a given page
 // add a function that will delete a page
-
-import (
-	"fmt"
-)
 
 // linked list
 type storyPage struct {
@@ -13,34 +11,36 @@ type storyPage struct {
 	nextPage *storyPage
 }
 
-func addPage(page, nextPage *storyPage) {
-	if page.nextPage == nil {
-		page.nextPage = nextPage
+func (page *storyPage) playStory() {
+	for page != nil {
+		fmt.Println(page.text)
+		page = page.nextPage
 	}
 }
 
-func removePage(page, pageToRemove *storyPage) {
-	if page.nextPage == pageToRemove {
-		page.nextPage = nil
+func (page *storyPage) addToEnd(text string) {
+	for page.nextPage != nil {
+		page = page.nextPage
 	}
+	page.nextPage = &storyPage{text, nil}
 }
 
-func playStory(page *storyPage) {
-	if page == nil {
-		return
-	}
-	fmt.Println(page.text)
-	playStory(page.nextPage)
+func (page *storyPage) addAfter(text string) {
+	newPage := &storyPage{text, page.nextPage}
+	page.nextPage = newPage
 }
+
+// delete
 
 func main() {
 	//scanner := bufio.NewScanner(os.Stdin)
 
 	page1 := storyPage{"It was a dark and stormy night.", nil}
-	page2 := storyPage{"You are alone, and you need to find the sacred helmet before the bad guys do", nil}
-	page3 := storyPage{"You see a troll ahead", nil}
+	page1.addToEnd("You are alone, and you need to find the sacred helmet before the bad guys do")
+	page1.addToEnd("You see a troll ahead")
 
-	page1.nextPage = &page2
-	page2.nextPage = &page3
-	playStory(&page1)
+	page1.addAfter("Testing after")
+
+	page1.playStory()
+
 }
