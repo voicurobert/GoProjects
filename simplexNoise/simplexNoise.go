@@ -178,8 +178,6 @@ func main() {
 		mult := 1
 		if keyState[sdl.SCANCODE_LSHIFT] != 0 || keyState[sdl.SCANCODE_RSHIFT] != 0 {
 			mult = -1
-			makeNoise(pixels, freq, lacunarity, gain, octaves)
-			
 		}
 		if keyState[sdl.SCANCODE_O] != 0 {
 			octaves = octaves + 1*mult
