@@ -8,7 +8,7 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/voicurobert/GoProjects/microservices/working/handlers"
+	"github.com/voicurobert/GoProjects/microservices/handlers"
 )
 
 func oldHandlers() {

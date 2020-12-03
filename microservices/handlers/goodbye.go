@@ -5,10 +5,12 @@ import (
 	"net/http"
 )
 
+// Goodbye struct handler
 type Goodbye struct {
 	l *log.Logger
 }
 
+// NewGoodbye returns a new Goodbye handler
 func NewGoodbye(l *log.Logger) *Goodbye {
 	return &Goodbye{l}
 }
