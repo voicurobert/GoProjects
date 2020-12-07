@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"strconv"
 	"time"
 
 	"github.com/go-playground/validator"
@@ -30,6 +31,7 @@ func (p *Product) FromJSON(r io.Reader) error {
 // Validate func
 func (p *Product) Validate() error {
 	validate := validator.New()
+	strconv.Atoi()
 	return validate.Struct(p)
 }
 
