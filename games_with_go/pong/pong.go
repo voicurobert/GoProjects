@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/veandco/go-sdl2/sdl"
-	"github.com/voicurobert/GoProjects/noise"
+	"github.com/voicurobert/GoProjects/games_with_go/noise"
 )
 
 const winWidth, winHeight int = 800, 600
