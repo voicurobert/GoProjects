@@ -93,6 +93,7 @@ func findProductByID(id int) (*Product, int, error) {
 			return p, i, nil
 		}
 	}
+
 	return nil, 0, ErrProductNotFound
 }
 
