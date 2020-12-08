@@ -17,6 +17,11 @@ package handlers
 
 import "github.com/voicurobert/GoProjects/microservices/data"
 
+// NOTE: Types defined here are purely for documentation purposes
+// these types are not used by any of the handers
+
+// Generic error message returned as a string
+// swagger:response errorResponse
 type errorResponseWrapper struct {
 	// Description of the error
 	// in: body
@@ -50,6 +55,8 @@ type productResponseWrapper struct {
 // No content is returned by this API endpoint
 // swagger:response noContentResponse
 type noContentResponseWrapper struct {
+	// No content
+	// in: body
 }
 
 // swagger:parameters updateProduct createProduct
@@ -61,7 +68,7 @@ type productParamsWrapper struct {
 	Body data.Product
 }
 
-// swagger:parameters updateProduct
+// swagger:parameters listSingleProduct deleteProduct
 type productIDParamsWrapper struct {
 	// The id of the product for which the operation relates
 	// in: path

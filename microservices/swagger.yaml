@@ -2,6 +2,14 @@ basePath: /
 consumes:
 - application/json
 definitions:
+  GenericError:
+    description: GenericError is a generic error message returned by a server
+    properties:
+      message:
+        type: string
+        x-go-name: Message
+    type: object
+    x-go-package: github.com/voicurobert/GoProjects/microservices/handlers
   Product:
     description: Product defines the structure for an API product
     properties:
@@ -95,13 +103,6 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/Product'
-      - description: The id of the product for which the operation relates
-        format: int64
-        in: path
-        name: id
-        required: true
-        type: integer
-        x-go-name: ID
       responses:
         "201":
           $ref: '#/responses/noContentResponse'
@@ -127,14 +128,22 @@ paths:
         "201":
           $ref: '#/responses/noContentResponse'
         "404":
-          $ref: '#/responses/errorResponses'
+          $ref: '#/responses/errorResponse'
         "501":
           $ref: '#/responses/errorResponse'
       tags:
       - products
     get:
       description: Return a list of products from the database
-      operationId: listSingle
+      operationId: listSingleProduct
+      parameters:
+      - description: The id of the product for which the operation relates
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: ID
       responses:
         "200":
           $ref: '#/responses/productsResponse'
@@ -143,11 +152,14 @@ paths:
 produces:
 - application/json
 responses:
+  errorResponse:
+    description: Generic error message returned as a string
+    schema:
+      $ref: '#/definitions/GenericError'
   errorValidation:
     description: Validation errors defined as an array of strings
     schema:
       $ref: '#/definitions/ValidationError'
-  noContent: {}
   noContentResponse:
     description: No content is returned by this API endpoint
   productResponse:
@@ -156,12 +168,6 @@ responses:
       $ref: '#/definitions/Product'
   productsResponse:
     description: A list of products
-    schema:
-      items:
-        $ref: '#/definitions/Product'
-      type: array
-  productsResponses:
-    description: A list of Product returned in the response
     schema:
       items:
         $ref: '#/definitions/Product'

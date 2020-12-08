@@ -1,3 +1,17 @@
 {
-    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        "completionDocumentation": true // for documentation in completion items
+
+    },
+"files.eol": "\n",
 }

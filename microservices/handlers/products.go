@@ -10,18 +10,6 @@ import (
 	"github.com/voicurobert/GoProjects/microservices/data"
 )
 
-// A list of Product returned in the response
-// swagger:response productsResponses
-type productsResponse struct {
-	// all products in the system
-	// in: body
-	Body []data.Product
-}
-
-// swagger:response noContent
-type productsNoContent struct {
-}
-
 // swagger:parameters deleteProduct
 type productIDParameterWrapper struct {
 	// The ID from the Product to delete from the database
