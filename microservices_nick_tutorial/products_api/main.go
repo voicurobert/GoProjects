@@ -10,10 +10,11 @@ import (
 
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/gorilla/mux"
+	"github.com/nicholasjackson/env"
 
 	gohandlers "github.com/gorilla/handlers"
-	"github.com/voicurobert/GoProjects/microservices/data"
-	"github.com/voicurobert/GoProjects/microservices/handlers"
+	"github.com/voicurobert/GoProjects/microservices_nick_tutorial/products_api/data"
+	"github.com/voicurobert/GoProjects/microservices_nick_tutorial/products_api/handlers"
 )
 
 func oldHandlers() {
@@ -38,6 +39,8 @@ func oldHandlers() {
 }
 
 func main() {
+
+	env.Parse()
 
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
 

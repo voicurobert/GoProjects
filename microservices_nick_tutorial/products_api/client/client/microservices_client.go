@@ -10,7 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/voicurobert/GoProjects/microservices/client/client/products"
+	"github.com/voicurobert/GoProjects/microservices_nick_tutorial/products_api/client/client/products"
 )
 
 // Default microservices HTTP client.

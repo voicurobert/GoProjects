@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/voicurobert/GoProjects/microservices/client/models"
+	"github.com/voicurobert/GoProjects/microservices_nick_tutorial/products_api/client/models"
 )
 
 // ListSingleProductReader is a Reader for the ListSingleProduct structure.

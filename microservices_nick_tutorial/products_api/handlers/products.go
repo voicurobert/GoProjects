@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/voicurobert/GoProjects/microservices/data"
+	"github.com/voicurobert/GoProjects/microservices_nick_tutorial/products_api/data"
 )
 
 // swagger:parameters deleteProduct
