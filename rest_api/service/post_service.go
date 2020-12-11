@@ -1,0 +1,49 @@
+package service
+
+import (
+	"errors"
+	"math/rand"
+
+	"github.com/voicurobert/GoProjects/rest_api/entity"
+	"github.com/voicurobert/GoProjects/rest_api/repository"
+)
+
+//PostService interface
+type PostService interface {
+	Validate(post *entity.Post) error
+	Create(post *entity.Post) (*entity.Post, error)
+	FindAll() ([]entity.Post, error)
+}
+
+type service struct {
+}
+
+var (
+	repo repository.PostRespository
+)
+
+//NewPostService constructor
+func NewPostService(repository repository.PostRespository) PostService {
+	repo = repository
+	return &service{}
+}
+
+func (*service) Validate(post *entity.Post) error {
+	var err error
+	if post == nil {
+		err = errors.New("The post is empty")
+	}
+	if post.Title == "" {
+		err = errors.New("The post title is empty")
+	}
+	return err
+}
+
+func (*service) Create(post *entity.Post) (*entity.Post, error) {
+	post.ID = rand.Int63()
+	return repo.Save(post)
+}
+
+func (*service) FindAll() ([]entity.Post, error) {
+	return repo.FindAll()
+}
