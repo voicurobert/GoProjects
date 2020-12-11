@@ -33,11 +33,15 @@ func (*repo) Save(post *entity.Post) (*entity.Post, error) {
 		return nil, err
 	}
 	defer client.Close()
-	_, _, err = client.Collection(collectionName).Add(ctx, map[string]interface{}{
-		"ID":    post.ID,
-		"Title": post.Title,
-		"Text":  post.Text,
-	})
+	/*
+		_, _, err = client.Collection(collectionName).Add(ctx, map[string]interface{}{
+			"ID":    post.ID,
+			"Title": post.Title,
+			"Text":  post.Text,
+		})
+	*/
+	_, _, err = client.Collection(collectionName).Add(ctx, post)
+
 	if err != nil {
 		log.Fatalf("Failed to add a new post: %v", err)
 		return nil, err
