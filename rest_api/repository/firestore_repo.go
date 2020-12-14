@@ -21,7 +21,7 @@ func NewFirestoreRepository() PostRespository {
 const (
 	projectID      = "rest-api-98457"
 	collectionName = "posts"
-	certPath       = "/Users/robert/go/src/github.com/voicurobert/GoProjects/rest_api/rest-api-98457-firebase-adminsdk-jlz5d-666b0ecde5.json"
+	certPath       = "/Users/robert/go/src/github.com/voicurobert/GoProjects/rest_api/firebase_conf.json"
 )
 
 //Save a Post struct

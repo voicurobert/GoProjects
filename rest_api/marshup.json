@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "brand": "honda",
+    "model": "civic",
+    "model_year": 2018,
+    "owner_firstname": "Robert",
+    "owner_lastname": "Voicu",
+    "owner_email": "voicu@gmail.com"
+}
