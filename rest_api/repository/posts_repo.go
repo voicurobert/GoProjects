@@ -1,8 +1,6 @@
 package repository
 
-import (
-	"github.com/voicurobert/GoProjects/rest_api/entity"
-)
+import "github.com/voicurobert/GoProjects/rest_api/entity"
 
 //PostRespository interface
 type PostRespository interface {
