@@ -28,6 +28,7 @@ type Item struct {
 //HandleGetDataLambda func
 func HandleGetDataLambda(context context.Context, data Data) ([]Item, error) {
 	t := data.Type
+
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
 	}))

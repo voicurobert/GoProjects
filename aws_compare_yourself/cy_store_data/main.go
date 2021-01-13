@@ -3,9 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"math/rand"
 	"os"
-	"strconv"
 
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/aws/aws-sdk-go/aws"
@@ -22,9 +20,10 @@ type Response struct {
 
 // Data struct
 type Data struct {
-	Age    int `json:"age"`
-	Height int `json:"height"`
-	Income int `json:"income"`
+	UserID string `json:"userID"`
+	Age    int    `json:"age"`
+	Height int    `json:"height"`
+	Income int    `json:"income"`
 }
 
 // Item struct to hold dynamo db items
@@ -43,9 +42,9 @@ func StoreDataLambda(ctx context.Context, data Data) (Response, error) {
 
 	svc := dynamodb.New(sess)
 
-	userID := "user_" + strconv.Itoa(rand.Int())
+	//userID := "user_" + strconv.Itoa(rand.Int())
 
-	item := Item{UserID: userID, Age: data.Age, Height: data.Height, Income: data.Income}
+	item := Item{UserID: data.UserID, Age: data.Age, Height: data.Height, Income: data.Income}
 
 	av, err := dynamodbattribute.MarshalMap(item)
 	if err != nil {
@@ -68,7 +67,7 @@ func StoreDataLambda(ctx context.Context, data Data) (Response, error) {
 		os.Exit(1)
 	}
 
-	return Response{Message: "Added item to dynamo db " + userID}, nil
+	return Response{Message: "Added item to dynamo db " + data.UserID}, nil
 }
 
 func main() {
