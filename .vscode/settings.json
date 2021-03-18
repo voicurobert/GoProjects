@@ -14,4 +14,7 @@
 
     },
 "files.eol": "\n",
+"workbench.preferredDarkColorTheme": "Darcula",
+"workbench.iconTheme": "vscode-icons",
+"workbench.colorTheme": "Darcula",
 }
