@@ -1,20 +1,22 @@
 {
-    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
     "go.useLanguageServer": true,
     "[go]": {
-        "editor.snippetSuggestions": "none",
+        "editor.snippetSuggestions": "inline",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
     },
     "gopls": {
-        "usePlaceholders": true, // add parameter placeholders when completing a function
-        "completionDocumentation": true // for documentation in completion items
+        "usePlaceholders": true,
+        "completionDocumentation": true
 
     },
 "files.eol": "\n",
 "workbench.preferredDarkColorTheme": "Darcula",
 "workbench.iconTheme": "vscode-icons",
 "workbench.colorTheme": "Darcula",
+"go.lintTool": "golint",
+"editor.autoClosingBrackets": "always",
+"go.useCodeSnippetsOnFunctionSuggest": true
 }
