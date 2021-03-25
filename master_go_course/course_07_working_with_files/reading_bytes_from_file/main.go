@@ -25,7 +25,7 @@ func main() {
 	log.Printf("Nr of bytes read: %d \n", nrBytesRead)
 	log.Printf("%s \n", byteSlice)
 
-	file, err = os.Open("main.go")
+	file, err = os.Open("linked_list.go")
 	if err != nil {
 		log.Fatal(err)
 	}

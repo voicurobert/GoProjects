@@ -26,7 +26,7 @@ func main() {
 
 	defer foobar()
 
-	file, err := os.Open("main.go")
+	file, err := os.Open("linked_list.go")
 
 	if err != nil {
 		log.Fatal(err)
