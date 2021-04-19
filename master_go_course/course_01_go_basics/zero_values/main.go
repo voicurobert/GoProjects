@@ -11,7 +11,6 @@ func main() {
 
 	fmt.Println(a, b)
 
-
 	// var x int
 
 	// x = "asd" // literal means the value itself

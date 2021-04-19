@@ -49,6 +49,6 @@ func main() {
 
 	x := 3.4
 	y := 6.9
-	fmt.Printf("X * Y = %.3f\n", x * y)
+	fmt.Printf("X * Y = %.3f\n", x*y)
 
 }

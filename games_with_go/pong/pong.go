@@ -278,7 +278,12 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	defer renderer.Destroy()
+	defer func(renderer *sdl.Renderer) {
+		err := renderer.Destroy()
+		if err != nil {
+
+		}
+	}(renderer)
 
 	texture, err := renderer.CreateTexture(sdl.PIXELFORMAT_ABGR8888, sdl.TEXTUREACCESS_STREAMING, int32(winWidth), int32(winHeight))
 
@@ -300,10 +305,10 @@ func main() {
 	ball := ball{pos{300, 300}, 20, 400, 400, color{255, 255, 255}}
 	keyState := sdl.GetKeyboardState()
 
-	noise, min, max := noise.MakeNoise(noise.FBM, .001, 0.5, 2, 3, winWidth, winHeight)
+	n, min, max := noise.MakeNoise(noise.FBM, .001, 0.5, 2, 3, winWidth, winHeight)
 
 	gradient := getGradient(color{255, 0, 0}, color{0, 0, 0})
-	noisePixels := rescaleAndDraw(noise, min, max, gradient, winWidth, winHeight)
+	noisePixels := rescaleAndDraw(n, min, max, gradient, winWidth, winHeight)
 
 	var frameStart time.Time
 	var elapsedTime float32
@@ -349,8 +354,14 @@ func main() {
 		player2.draw(pixels)
 		ball.draw(pixels)
 
-		texture.Update(nil, pixels, winWidth*4)
-		renderer.Copy(texture, nil, nil)
+		err := texture.Update(nil, pixels, winWidth*4)
+		if err != nil {
+			return
+		}
+		err = renderer.Copy(texture, nil, nil)
+		if err != nil {
+			return
+		}
 		renderer.Present()
 
 		elapsedTime = float32(time.Since(frameStart).Seconds())

@@ -33,7 +33,7 @@ func checkAndSaveBody(url string, wg *sync.WaitGroup) {
 			}
 		}
 	}
-	
+
 	wg.Done()
 }
 

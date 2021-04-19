@@ -14,6 +14,6 @@ func main() {
 
 	// spawning a goroutine
 	go doSomething()
-	
+
 	time.Sleep(time.Second * 2)
 }

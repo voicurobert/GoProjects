@@ -55,7 +55,6 @@ func main() {
 	fmt.Printf("%T, %v \n", f, f)
 }
 
-
 func f() {
 
 }

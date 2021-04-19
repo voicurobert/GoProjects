@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	numbers := []int{2, 3}
-	
+
 	numbers = append(numbers, 10, 40)
 
 	n := []int{100, 200}

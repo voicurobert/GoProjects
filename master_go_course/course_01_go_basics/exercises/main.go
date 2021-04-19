@@ -115,7 +115,7 @@ func main() {
 	fmt.Println(hour)
 	minute := 60
 	fmt.Println(hour != duration(minute))
-	
+
 	type mile float64
 	type kilometer float64
 	const m2km = 1.609

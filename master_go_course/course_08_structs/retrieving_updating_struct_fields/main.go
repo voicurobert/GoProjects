@@ -35,5 +35,4 @@ func main() {
 	myBook.title = "Test"
 	fmt.Println(aBook, myBook)
 
-	
 }

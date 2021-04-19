@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	people := [5]string {
+	people := [5]string{
 		"Hellen",
 		"Mark",
 		"Brenda",
@@ -11,18 +11,18 @@ func main() {
 		"Michael",
 	}
 
-	friends := [2]string {"Mark", "Marry"}
+	friends := [2]string{"Mark", "Marry"}
 
-	outer:
-		for index, name := range people {
-			for _, friend := range friends {
-				if name == friend {
-					fmt.Printf("Found a friend %q at index %d\n", friend, index)
-					break outer
-				}
+outer:
+	for index, name := range people {
+		for _, friend := range friends {
+			if name == friend {
+				fmt.Printf("Found a friend %q at index %d\n", friend, index)
+				break outer
 			}
 		}
+	}
 
 	// go to statement
-	
+
 }

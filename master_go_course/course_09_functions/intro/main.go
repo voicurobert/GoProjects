@@ -27,7 +27,7 @@ func f5(a, b int) (int, int) {
 
 func sum(a, b int) (s int) {
 	s = a + b
-	return 
+	return
 }
 
 func main() {

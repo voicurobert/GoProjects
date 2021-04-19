@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 func change(a *int) *float64 {
 	*a = 100
 	b := 5.5

@@ -42,5 +42,4 @@ func main() {
 	c, d := 5, 10
 	fmt.Println(c > 1 && d == 10)
 
-
 }

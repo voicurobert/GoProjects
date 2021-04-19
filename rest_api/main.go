@@ -23,5 +23,4 @@ func main() {
 	httpRouter.POST("/posts", postController.AddPost)
 
 	httpRouter.SERVE(os.Getenv("8000"))
-
 }

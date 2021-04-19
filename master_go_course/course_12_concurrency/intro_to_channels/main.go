@@ -19,11 +19,10 @@ func main() {
 	c <- 10
 
 	// receive operation
-	num := <- c
+	num := <-c
 
 	fmt.Println(num)
 
 	close(c) // closing a channel
-	
 
 }

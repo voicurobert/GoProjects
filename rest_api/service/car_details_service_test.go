@@ -15,4 +15,3 @@ func TestGetDetails(t *testing.T) {
 	assert.Equal(t, "Mitsubishi", carDetails.Brand)
 	assert.Equal(t, 2002, carDetails.Year)
 }
-	

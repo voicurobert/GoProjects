@@ -22,7 +22,6 @@ func (c *car) changeCarPointer(newBrand string, newPrice int) {
 	c.price = newPrice
 }
 
-
 func main() {
 	c := car{
 		brand: "Honda",

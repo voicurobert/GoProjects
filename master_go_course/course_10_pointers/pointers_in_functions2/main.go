@@ -64,7 +64,7 @@ func main() {
 	changeProductByPointer(&gift)
 	fmt.Println("After changeProduct", gift)
 
-	prices:= []int{10, 20, 30}
+	prices := []int{10, 20, 30}
 	changeSlice(prices)
 	fmt.Println(prices)
 
