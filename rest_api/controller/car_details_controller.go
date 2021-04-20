@@ -23,6 +23,7 @@ func NewCarDetailsController(cds service.CarDetailsService) CarDetailsController
 	return &controller{}
 }
 
+// GetCarDetails method return details of a car
 func (*controller) GetCarDetails(rw http.ResponseWriter, r *http.Request) {
 	rw.Header().Set("content-type", "application/json")
 	result := carDetailsService.GetDetails()
